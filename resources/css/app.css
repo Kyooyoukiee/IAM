@@ -4,6 +4,72 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
+    --color-paper: #f1eee6;
+    --color-ink: #222925;
+    --color-signal: #a43d2c;
+    --color-line: #c7c0b3;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-editorial: Georgia, 'Times New Roman', serif;
+}
+
+@layer base {
+    a,
+    button {
+        cursor: pointer;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline: 2px solid #a43d2c;
+        outline-offset: 3px;
+    }
+}
+
+@keyframes page-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@layer utilities {
+    .motion-enter {
+        animation: page-enter 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .motion-enter-late {
+        animation: page-enter 620ms cubic-bezier(0.16, 1, 0.3, 1) 140ms both;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .motion-enter,
+    .motion-enter-late {
+        animation: none;
+    }
+
+    .motion-zoom {
+        transition: none;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .motion-zoom {
+        transition: transform 180ms ease-out;
+    }
+
+    .motion-zoom:hover {
+        transform: scale(1.01);
+    }
+
+    .motion-zoom:active {
+        transform: scale(0.995);
+    }
 }
