@@ -7,11 +7,18 @@
         "laravel",
         "framework"
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Ben52/libsql-laravel.git"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.17",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "turso/libsql-laravel": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -83,6 +90,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
+            "cweagans/composer-patches": true,
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         }
