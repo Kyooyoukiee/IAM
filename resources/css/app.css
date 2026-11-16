@@ -4,13 +4,13 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --color-paper: #f1eee6;
-    --color-ink: #222925;
-    --color-signal: #a43d2c;
-    --color-line: #c7c0b3;
+    --color-mist: #eff6f8;
+    --color-deep: #173847;
+    --color-ocean: #0f6a80;
+    --color-coral: #b24c35;
+    --color-line: #c9dce2;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-editorial: Georgia, 'Times New Roman', serif;
 }
 
 @layer base {
@@ -21,7 +21,7 @@
 
     a:focus-visible,
     button:focus-visible {
-        outline: 2px solid #a43d2c;
+        outline: 2px solid #b24c35;
         outline-offset: 3px;
     }
 }
@@ -50,11 +50,9 @@
 
 @media (prefers-reduced-motion: reduce) {
     .motion-enter,
-    .motion-enter-late {
-        animation: none;
-    }
-
+    .motion-enter-late,
     .motion-zoom {
+        animation: none;
         transition: none;
         transform: none;
     }
